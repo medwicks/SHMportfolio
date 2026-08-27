@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Medwick | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            /* Mid-light purple accent palette */
+            --accent: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --accent-dark: #6d28d9;
+            --accent-soft: #ede9fe;
+            --accent-border: #ddd6fe;
+            
+            /* Ultra-light tinted purple backgrounds */
+            --bg: #faf8ff;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(250, 248, 255, 0.92);
+            --meta-bg: #f3effe;
+            
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --text-muted: #64748b;
+            --border: #e9e5f5;
+            --shadow-sm: 0 1px 3px 0 rgba(109, 40, 217, 0.04);
+            --shadow-hover: 0 10px 25px -3px rgba(109, 40, 217, 0.08), 0 4px 6px -4px rgba(109, 40, 217, 0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.1rem 10%;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.98rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Container */
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem;
+        }
+
+        /* Hero / Header */
+        .hero {
+            padding: 1.5rem 0 2.5rem;
+        }
+
+        .hero-top-layout {
+            display: flex;
+            align-items: center;
+            gap: 2.25rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .profile-img-container {
+            flex-shrink: 0;
+        }
+
+        .profile-img {
+            width: 165px;
+            height: 165px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 25%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 6px 18px rgba(109, 40, 217, 0.15);
+            display: block;
+        }
+
+        .hero-intro h1 {
+            font-size: 2.85rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.35rem;
+        }
+
+        .hero-intro .headline {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1.1rem;
+        }
+
+        .hero p {
+            font-size: 1.12rem;
+            color: var(--text-main);
+            margin-bottom: 1.75rem;
+            line-height: 1.75;
+        }
+
+        .hero-contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+        }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--text-main);
+            border: 1px solid var(--accent-border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-soft);
+            color: var(--accent-dark);
+            border-color: var(--accent-border);
+        }
+
+        /* Looking Forward / Future Goals Banner */
+        .goals-banner {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            border: 1px solid var(--accent-border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .goals-banner h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .goals-banner p {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            line-height: 1.6;
+            text-align: left;
+            margin: 0;
+        }
+
+        /* Skills Section & Highlighted Certificate */
+        .skills-block {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 3.5rem;
+            text-align: left;
+        }
+
+        .skills-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+            display: block;
+        }
+
+        .skills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-tag {
+            background-color: var(--accent-soft);
+            color: var(--accent-dark);
+            border: 1px solid var(--accent-border);
+            padding: 0.4rem 0.95rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Highlighted Certificate Card */
+        .cert-highlight-box {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
+            border: 1.5px solid var(--accent-border);
+            border-left: 5px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .cert-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-badge-tag {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent-dark);
+            margin-bottom: 0.15rem;
+        }
+
+        .cert-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .cert-status {
+            background-color: var(--accent-soft);
+            color: var(--accent-dark);
+            border: 1px solid var(--accent-border);
+            padding: 0.3rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* Section Setup */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            letter-spacing: -0.02em;
+        }
+
+        .section-line {
+            flex-grow: 1;
+            height: 2px;
+            background-color: var(--border);
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.85rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-border);
+        }
+
+        .card-with-banner {
+            padding: 0;
+        }
+
+        /* Banner Image Crops */
+        .card-banner {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pittsburgh-banner {
+            object-position: center 20%;
+        }
+
+        .dayton-banner {
+            object-position: center 25%;
+        }
+
+        .card-body {
+            padding: 1.85rem;
+        }
+
+        .card-project {
+            border-left: 5px solid var(--accent);
+            background: linear-gradient(180deg, #ffffff 0%, #faf8ff 100%);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .card-company {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            margin-top: 0.1rem;
+        }
+
+        .card-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            background: var(--meta-bg);
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            border: 1px solid var(--accent-border);
+        }
+
+        .card ul {
+            margin-left: 1.25rem;
+            margin-top: 0.75rem;
+        }
+
+        .card li {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.65;
+        }
+
+        .card p {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Details Card */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .contact-card span {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .contact-card a {
+            color: var(--accent-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            word-break: break-all;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3.5rem 1rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 680px) {
+            nav {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 1rem;
+            }
+            .hero-top-layout {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.25rem;
+            }
+            .hero-contact-row {
+                justify-content: center;
+            }
+            .hero-intro h1 {
+                font-size: 2.25rem;
+            }
+            .hero-intro .headline {
+                font-size: 1.15rem;
+            }
+            .container {
+                padding: 2rem 1.25rem;
+            }
+            .card, .card-body {
+                padding: 1.35rem;
+            }
+            .card-banner {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav>
+        <a href="#about" class="nav-logo">Sarah Medwick</a>
+        <ul class="nav-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#academics">Academics</a></li>
+            <li><a href="#involvement">Involvement</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <!-- ABOUT / HERO SECTION (LEFT-ALIGNED LAYOUT) -->
+        <header id="about" class="hero">
+            <div class="hero-top-layout">
+                <div class="profile-img-container">
+                    <img src="headshot2.jpg" alt="Sarah Medwick Headshot" class="profile-img">
+                </div>
+                <div class="hero-intro">
+                    <h1>Sarah Medwick</h1>
+                    <div class="headline">Business Analytics & Finance</div>
+                    <!-- Quick Action Contact Buttons -->
+                    <div class="hero-contact-row">
+                        <a href="mailto:shmedwick@gmail.com" class="btn-link btn-primary">✉ Email Me</a>
+                        <a href="https://www.linkedin.com/in/sarah-medwick" target="_blank" rel="noopener noreferrer" class="btn-link btn-secondary">↗ LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Senior Business Analytics and Finance major with a strong quantitative foundation in data analysis, visualization, and finance fundamentals. Experienced across Excel, VBA, Python, and JavaScript, with developing proficiency in SQL through coursework and the IBM Data Analytics Certificate. Detail-oriented and collaborative, with a strong focus on data integrity, driving strategic business decisions, and continuous technical growth.
+            </p>
+
+            <!-- LOOKING FORWARD BANNER -->
+            <div class="goals-banner">
+                <h3>Looking Forward</h3>
+                <p>
+                    I am actively seeking full-time and internship opportunities in <strong>Business Analytics</strong>, <strong>Financial Analysis</strong>, <strong>Data Analytics</strong>, or <strong>Business Intelligence</strong> where I can apply quantitative modeling, data visualization, and problem-solving skills to support strategic decisions.
+                </p>
+            </div>
+
+            <!-- TECHNICAL SKILLS & CERTIFICATE HIGHLIGHT -->
+            <div class="skills-block">
+                <span class="skills-label">Technical Skills & Tools</span>
+                <div class="skills-wrap">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">VBA & Excel</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">Microsoft Access</span>
+                </div>
+
+                <!-- Standout Certificate Highlight Box -->
+                <div class="cert-highlight-box">
+                    <div class="cert-left">
+                        <span class="cert-badge-tag">Professional Credential</span>
+                        <span class="cert-name">IBM Data Analytics Professional Certificate</span>
+                        <span style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.15rem;">Coursera · Advanced Data Analysis, SQL & Visualization</span>
+                    </div>
+                    <span class="cert-status">In Progress</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 1. PROJECTS SECTION -->
+        <section id="projects">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid">
+                <div class="card card-project">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">AI SharePoint Search Tool</div>
+                            <div class="card-company">Federated Hermes · Intern Hackathon Winner</div>
+                        </div>
+                        <span class="card-date">July 2026</span>
+                    </div>
+                    <ul>
+                        <li>Member of an 8-person winning intern hackathon team that engineered an AI-powered enhancement for the existing SharePoint search tool, reducing token costs by up to 80%.</li>
+                        <li>Delivered formal technical demonstrations and presentations to technology organization leadership and external corporate sponsors.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. WORK EXPERIENCE SECTION -->
+        <section id="experience">
+            <div class="section-header">
+                <h2>Work Experience</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid">
+                <div class="card card-with-banner">
+                    <img src="pittsburgh.jpg" alt="Pittsburgh Skyline" class="card-banner pittsburgh-banner">
+                    <div class="card-body">
+                        <div class="card-header">
+                            <div>
+                                <div class="card-title">Business Analyst Intern</div>
+                                <div class="card-company">Federated Hermes · Pittsburgh, PA</div>
+                            </div>
+                            <span class="card-date">May 2026 – Aug 2026</span>
+                        </div>
+                        <ul>
+                            <li>Authored and completed comprehensive project management documentation across 13 infrastructure-supporting initiatives in close coordination with SMEs.</li>
+                            <li>Facilitated stakeholder documentation reviews and structured approval workflows.</li>
+                            <li>Shadowed Business Systems Analysts and Data Analysts to gain firsthand insights into end-to-end data preparation pipelines.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Brand Representative</div>
+                            <div class="card-company">Altar’d State Kids · Pittsburgh, PA</div>
+                        </div>
+                        <span class="card-date">May 2024 – Aug 2024</span>
+                    </div>
+                    <ul>
+                        <li>Monitored store dashboard data to analyze inventory sales performance metrics and track customer trends.</li>
+                        <li>Consistently maintained over 95% register accuracy while supporting high-volume operations.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ACADEMICS SECTION -->
+        <section id="academics">
+            <div class="section-header">
+                <h2>Academics</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="card card-with-banner">
+                <img src="daytonpicture.jpg" alt="University of Dayton Campus" class="card-banner dayton-banner">
+                <div class="card-body">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">University of Dayton, School of Business Administration</div>
+                            <div class="card-company">Bachelor of Science in Business Administration; Business Analytics & Finance</div>
+                        </div>
+                        <span class="card-date">Expected May 2027</span>
+                    </div>
+                    <p><strong>Cumulative GPA:</strong> 3.647</p>
+                    <div style="margin-top: 0.75rem;">
+                        <p><strong>Completed Coursework:</strong> Statistics (I & II), JavaScript Programming (I & II), Programming for Business Analytics, Economics, Calculus (I–III), Differential Equations.</p>
+                        <p style="margin-top: 0.35rem;"><strong>Current Coursework:</strong> Foundations of Machine Learning, Business Intelligence, Investments I.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. OTHER INVOLVEMENT SECTION -->
+        <section id="involvement">
+            <div class="section-header">
+                <h2>Other Involvement</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Data Analytics Club</div>
+                            <div class="card-company">Club Member · Dayton, OH</div>
+                        </div>
+                        <span class="card-date">Jan 2026 – Present</span>
+                    </div>
+                    <ul>
+                        <li>Led weekly meetings and managed operational resources to achieve team fundraising targets.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Sigma Kappa Sorority</div>
+                            <div class="card-company">Member Integrity Committee · Dayton, OH</div>
+                        </div>
+                        <span class="card-date">Feb 2023 – Present</span>
+                    </div>
+                    <ul>
+                        <li>Supported chapter standards by encouraging members to uphold organizational values and regulations.</li>
+                        <li>Contributed actively to campus philanthropy initiatives and structured recruitment campaigns.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONTACT SECTION -->
+        <section id="contact">
+            <div class="section-header">
+                <h2>Contact Information</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span>Email</span>
+                    <a href="mailto:shmedwick@gmail.com">shmedwick@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <span>LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/sarah-medwick" target="_blank" rel="noopener noreferrer">linkedin.com/in/sarah-medwick</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Sarah Medwick</p>
+    </footer>
+
+</body>
+</html>
