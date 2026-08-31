@@ -421,6 +421,18 @@
             line-height: 1.65;
         }
 
+        .inline-link {
+            color: var(--accent-dark);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s ease;
+        }
+
+        .inline-link:hover {
+            color: var(--accent-hover);
+        }
+
         .card p {
             font-size: 1.05rem;
             color: var(--text-main);
@@ -517,9 +529,9 @@
     <nav>
         <a href="#about" class="nav-logo">Sarah Medwick</a>
         <ul class="nav-links">
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#academics">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#academics">Academics</a></li>
             <li><a href="#involvement">Involvement</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -554,10 +566,43 @@
                     Actively seeking full-time opportunities in <strong>Machine Learning Engineering</strong>, <strong>Data Analytics</strong>, <strong>Business Systems Analysis</strong>, and related analytical roles where I can apply data analytics, machine learning, and financial analysis techniques to solve business problems and support strategic decisions.
                 </p>
             </div>
+        </header>
 
-            <!-- TECHNICAL SKILLS & CERTIFICATE HIGHLIGHT -->
+        <!-- 1. EDUCATION / ACADEMICS SECTION -->
+        <section id="academics">
+            <div class="section-header">
+                <h2>Education</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="card card-split-side">
+                <img src="daytonpicture1.jpg" alt="University of Dayton Campus" class="card-side-img dayton-side">
+                <div class="card-split-content">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">University of Dayton, School of Business Administration</div>
+                            <div class="card-company">Bachelor of Science in Business Administration; Business Analytics & Finance</div>
+                        </div>
+                        <span class="card-date">Expected May 2027</span>
+                    </div>
+                    <p><strong>Cumulative GPA:</strong> 3.647</p>
+                    <div style="margin-top: 0.75rem;">
+                        <p><strong>Relevant Completed Courses:</strong> Calculus (I–III), Differential Equations, Statistics (I & II), JavaScript Programming (I & II), Economics, Programming for Business Analytics, Database Design & Implementation.</p>
+                        <p style="margin-top: 0.35rem;"><strong>Relevant Current Courses:</strong> Foundations of Machine Learning, Business Intelligence, Investments I.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. TECHNICAL TOOLS & CERTIFICATES SECTION -->
+        <section id="skills">
+            <div class="section-header">
+                <h2>Technical Tools & Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+
             <div class="skills-block">
-                <span class="skills-label">Technical Skills & Tools</span>
+                <span class="skills-label">Core Technical Toolkit</span>
                 <div class="skills-wrap">
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">SQL</span>
@@ -579,16 +624,17 @@
                     <span class="cert-status">In Progress</span>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <!-- 1. PROJECTS SECTION -->
-        <section id="projects">
+        <!-- 3. WORK EXPERIENCE & PROJECTS SECTION -->
+        <section id="experience">
             <div class="section-header">
-                <h2>Featured Projects</h2>
+                <h2>Work Experience & Projects</h2>
                 <div class="section-line"></div>
             </div>
 
             <div class="grid">
+                <!-- Project: Hackathon Winner -->
                 <div class="card card-project">
                     <div class="card-header">
                         <div>
@@ -602,18 +648,8 @@
                         <li>Delivered formal technical demonstrations and presentations to technology organization leadership and external corporate sponsors.</li>
                     </ul>
                 </div>
-            </div>
-        </section>
 
-        <!-- 2. WORK EXPERIENCE SECTION -->
-        <section id="experience">
-            <div class="section-header">
-                <h2>Work Experience</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="grid">
-                <!-- Split Card: Pittsburgh Side Image -->
+                <!-- Work: Federated Hermes -->
                 <div class="card card-split-side">
                     <img src="pittsburgh1.webp" alt="Pittsburgh Skyline" class="card-side-img pittsburgh-side">
                     <div class="card-split-content">
@@ -631,6 +667,7 @@
                     </div>
                 </div>
 
+                <!-- Work: Altar'd State -->
                 <div class="card">
                     <div class="card-header">
                         <div>
@@ -647,37 +684,10 @@
             </div>
         </section>
 
-        <!-- 3. ACADEMICS SECTION -->
-        <section id="academics">
-            <div class="section-header">
-                <h2>Academics</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="card card-split-side">
-                <!-- Split Card: Dayton Side Image -->
-                <img src="daytonpicture1.jpg" alt="University of Dayton Campus" class="card-side-img dayton-side">
-                <div class="card-split-content">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">University of Dayton, School of Business Administration</div>
-                            <div class="card-company">Bachelor of Science in Business Administration; Business Analytics & Finance</div>
-                        </div>
-                        <span class="card-date">Expected May 2027</span>
-                    </div>
-                    <p><strong>Cumulative GPA:</strong> 3.647</p>
-                    <div style="margin-top: 0.75rem;">
-                        <p><strong>Completed Coursework:</strong> Calculus (I–III), Differential Equations, Statistics (I & II), JavaScript Programming (I & II), Economics, Programming for Business Analytics, Database Design & Implementation.</p>
-                        <p style="margin-top: 0.35rem;"><strong>Current Coursework:</strong> Foundations of Machine Learning, Business Intelligence, Investments I.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. OTHER INVOLVEMENT SECTION -->
+        <!-- 4. EXTRACURRICULAR ACTIVITIES SECTION -->
         <section id="involvement">
             <div class="section-header">
-                <h2>Other Involvement</h2>
+                <h2>Extracurricular Activities</h2>
                 <div class="section-line"></div>
             </div>
 
@@ -705,7 +715,7 @@
                     </div>
                     <ul>
                         <li>Encouraging sorority members to uphold the organization’s values and regulations.</li>
-                        <li>Contributing to various philanthropy events and recruitment.</li>
+                        <li>Contributing to recruitment and various <a href="http://dayton.sigmakappa.org/philanthropy/chapter" target="_blank" rel="noopener noreferrer" class="inline-link">chapter philanthropies ↗</a>.</li>
                     </ul>
                 </div>
             </div>
